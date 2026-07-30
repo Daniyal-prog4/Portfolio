@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daniyal Saleem | Cybersecurity & Systems Engineer</title>
+    <title>Daniyal Saleem | System Engineer & Cybersecurity</title>
     
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -34,11 +34,11 @@
     <section class="home" id="home">
         <div class="home-content" data-aos="fade-right">
             <div class="status-badge">
-                <span class="pulse-dot"></span> Available for Internship & Cyber Defense Projects
+                <span class="pulse-dot"></span> Available for Internship
             </div>
-            <h3>Hello, World! I am</h3>
-            <h1>Daniyal Saleem</h1>
-            <h3>Cybersecurity Analyst & <span class="typing-text"></span></h3>
+            <h3>Hello, I'm</h3>
+            <h1 class="hero-name">Daniyal Saleem</h1>
+            <h3 class="role-text">System Engineer & <span id="typing-text"></span></h3>
             <p>Computer Systems Engineering student at Sukkur IBA University (OGDCL NTHP Scholar). Passionate about threat mitigation, embedded systems security, Linux log analysis, and network defense.</p>
             
             <div class="social-media">
@@ -50,15 +50,15 @@
             </div>
 
             <div class="cta-buttons">
-                <a href="CV.pdf.pdf" download class="btn btn-glow"><i class="fas fa-download"></i> Download CV</a>
+                <a href="CV.pdf" download class="btn btn-glow"><i class="fas fa-download"></i> Download CV</a>
                 <a href="#projects" class="btn btn-outline">View Portfolio</a>
             </div>
         </div>
 
         <div class="home-img" data-aos="fade-left">
-            <div class="rainbow-avatar-wrapper">
-                <div class="rainbow-ring"></div>
-                <img src="profile.jpg.jpeg" alt="Daniyal Saleem" class="profile-img">
+            <div class="dots-avatar-wrapper">
+                <div class="dots-ring"></div>
+                <img src="personal1.png" alt="Daniyal Saleem" class="profile-img">
             </div>
         </div>
     </section>
@@ -78,7 +78,7 @@
             
             <div class="about-details">
                 <p><i class="fas fa-graduation-cap"></i> <strong>Degree:</strong> B.E. Computer Systems Engineering (2025–Present)</p>
-                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Lakki Marwat, KPK / Sukkur, Pakistan</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Lakki Marwat, KPK, Pakistan</p>
                 <p><i class="fas fa-envelope"></i> <strong>Email:</strong> daniyalsaleem.becsef25@iba-suk.edu.pk</p>
             </div>
         </div>
@@ -87,20 +87,23 @@
     <section class="stats" id="stats">
         <div class="stats-container">
             <div class="stat-card glass-card" data-aos="flip-up">
-                <h2 class="counter" data-target="3.42">0</h2>
+                <h2 class="counter" data-target="3.42" data-decimals="2">0.00</h2>
                 <p>CGPA</p>
             </div>
-            <div class="stat-card glass-card" data-aos="flip-up" data-aos-delay="100">
-                <h2 class="counter" data-target="10">0</h2><span>+</span>
-                <p>Projects</p>
-            </div>
-            <div class="stat-card glass-card" data-aos="flip-up" data-aos-delay="200">
-                <h2 class="counter" data-target="6">0</h2><span>+</span>
-                <p>Certifications</p>
-            </div>
-            <div class="stat-card glass-card" data-aos="flip-up" data-aos-delay="300">
-                <h2 class="counter" data-target="3">0</h2>
-                <p>Prog. Languages</p>
+            
+            <a href="#projects" class="stat-card glass-card clickable-card" data-aos="flip-up" data-aos-delay="100">
+                <h2 class="counter" data-target="2">0</h2>
+                <p>Projects <i class="fas fa-external-link-alt click-icon"></i></p>
+            </a>
+
+            <a href="#certs" class="stat-card glass-card clickable-card" data-aos="flip-up" data-aos-delay="200">
+                <h2 class="counter" data-target="6">0</h2>
+                <p>Certifications <i class="fas fa-external-link-alt click-icon"></i></p>
+            </a>
+
+            <div class="stat-card glass-card clickable-card" onclick="openLanguagesModal()" data-aos="flip-up" data-aos-delay="300">
+                <h2 class="counter" data-target="5">0</h2>
+                <p>Prog. Languages <i class="fas fa-info-circle click-icon"></i></p>
             </div>
         </div>
     </section>
@@ -110,23 +113,23 @@
         <div class="skills-wrapper" data-aos="fade-up">
             <div class="skill-bar">
                 <div class="info"><span>Cybersecurity & Threat Mitigation</span><span class="percent">90%</span></div>
-                <div class="bar"><span class="progress" style="width: 90%;"></span></div>
+                <div class="bar"><span class="progress" data-progress="90%"></span></div>
             </div>
             <div class="skill-bar">
                 <div class="info"><span>C / C++ Programming</span><span class="percent">85%</span></div>
-                <div class="bar"><span class="progress" style="width: 85%;"></span></div>
+                <div class="bar"><span class="progress" data-progress="85%"></span></div>
             </div>
             <div class="skill-bar">
                 <div class="info"><span>Arduino & Embedded IoT</span><span class="percent">90%</span></div>
-                <div class="bar"><span class="progress" style="width: 90%;"></span></div>
+                <div class="bar"><span class="progress" data-progress="90%"></span></div>
             </div>
             <div class="skill-bar">
                 <div class="info"><span>Linux Administration & CLI</span><span class="percent">80%</span></div>
-                <div class="bar"><span class="progress" style="width: 80%;"></span></div>
+                <div class="bar"><span class="progress" data-progress="80%"></span></div>
             </div>
             <div class="skill-bar">
                 <div class="info"><span>Java</span><span class="percent">75%</span></div>
-                <div class="bar"><span class="progress" style="width: 75%;"></span></div>
+                <div class="bar"><span class="progress" data-progress="75%"></span></div>
             </div>
         </div>
     </section>
@@ -137,75 +140,75 @@
             
             <div class="cert-card glass-card" data-aos="zoom-in">
                 <div class="cert-img-box">
-                    <img src="Coursera.jpg.jpg" alt="Google Cybersecurity Certificate" class="cert-img">
+                    <img src="Coursera.jpg" alt="Google Cybersecurity Certificate" class="cert-img">
                 </div>
                 <h3>Google Foundations of Cybersecurity</h3>
-                <p>Issued via Coursera. Frameworks, SIEM tools, Linux & SQL.</p>
+                <p>Issued via Coursera. Security Frameworks, SIEM tools, Linux & SQL.</p>
                 <div class="cert-actions">
-                    <button class="btn-sm" onclick="openModal('Coursera.jpg.jpg')">View</button>
-                    <a href="Coursera.jpg.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm" onclick="openModal('Coursera.jpg')">View</button>
+                    <a href="Coursera.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
                     <a href="https://coursera.org/verify/03ADU47IDL16" target="_blank" class="btn-sm btn-outline"><i class="fas fa-link"></i></a>
                 </div>
             </div>
 
             <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="100">
                 <div class="cert-img-box">
-                    <img src="CISCO.jpg.jpg" alt="Cisco Certificate" class="cert-img">
+                    <img src="CISCO.jpg" alt="Cisco Certificate" class="cert-img">
                 </div>
                 <h3>Cisco Introduction to Cybersecurity</h3>
-                <p>Issued by Cisco Networking Academy. Network vulnerabilities & threat defense.</p>
+                <p>Issued by Cisco Networking Academy. Network vulnerabilities & defense.</p>
                 <div class="cert-actions">
-                    <button class="btn-sm" onclick="openModal('CISCO.jpg.jpg')">View</button>
-                    <a href="CISCO.jpg.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
-                    <button class="btn-sm btn-outline" onclick="openModal('Badge.jpg.jpg')">Badge Proof</button>
+                    <button class="btn-sm" onclick="openModal('CISCO.jpg')">View</button>
+                    <a href="CISCO.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm btn-outline" onclick="openModal('Badge.jpg')">Badge Proof</button>
                 </div>
             </div>
 
             <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="200">
                 <div class="cert-img-box">
-                    <img src="AI.png.png" alt="YNN AI Basics" class="cert-img">
+                    <img src="AI.png" alt="YNN AI Basics" class="cert-img">
                 </div>
                 <h3>YNN: AI & Automation Basics</h3>
                 <p>Certified Leadership & Technical Webinar by Youth National Network.</p>
                 <div class="cert-actions">
-                    <button class="btn-sm" onclick="openModal('AI.png.png')">View</button>
-                    <a href="AI.png.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm" onclick="openModal('AI.png')">View</button>
+                    <a href="AI.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
                 </div>
             </div>
 
             <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="300">
                 <div class="cert-img-box">
-                    <img src="01.jpg.jpg" alt="YNN Deen Over Dunya" class="cert-img">
+                    <img src="01.jpg" alt="YNN Deen Over Dunya" class="cert-img">
                 </div>
                 <h3>YNN: Deen Over Dunya</h3>
                 <p>National Youth Development Webinar Certificate.</p>
                 <div class="cert-actions">
-                    <button class="btn-sm" onclick="openModal('01.jpg.jpg')">View</button>
-                    <a href="01.jpg.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm" onclick="openModal('01.jpg')">View</button>
+                    <a href="01.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
                 </div>
             </div>
 
             <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="400">
                 <div class="cert-img-box">
-                    <img src="02.png.png" alt="YNN Sustainability" class="cert-img">
+                    <img src="02.png" alt="YNN Sustainability" class="cert-img">
                 </div>
                 <h3>YNN: Sustainability vs Motivation</h3>
                 <p>Exploring Discipline as a Sustainable Force for Growth.</p>
                 <div class="cert-actions">
-                    <button class="btn-sm" onclick="openModal('02.png.png')">View</button>
-                    <a href="02.png.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm" onclick="openModal('02.png')">View</button>
+                    <a href="02.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
                 </div>
             </div>
 
             <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="500">
                 <div class="cert-img-box">
-                    <img src="03.png.jpg" alt="YNN Sustainability Alternate" class="cert-img">
+                    <img src="03.jpg" alt="YNN Sustainability Certificate" class="cert-img">
                 </div>
-                <h3>YNN: Sustainability Certificate</h3>
+                <h3>YNN: Sustainability Participation</h3>
                 <p>Official Credential of Participation - Youth National Network.</p>
                 <div class="cert-actions">
-                    <button class="btn-sm" onclick="openModal('03.png.jpg')">View</button>
-                    <a href="03.png.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm" onclick="openModal('03.jpg')">View</button>
+                    <a href="03.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
                 </div>
             </div>
 
@@ -260,6 +263,20 @@
     <div id="imageModal" class="modal">
         <span class="close-modal" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="imgModalTarget">
+    </div>
+
+    <div id="languagesModal" class="modal">
+        <div class="modal-card glass-card">
+            <span class="close-modal" onclick="closeLanguagesModal()">&times;</span>
+            <h3 class="modal-heading"><i class="fas fa-code"></i> Programming Languages</h3>
+            <ul class="lang-list">
+                <li><i class="fab fa-java lang-icon"></i> Java</li>
+                <li><i class="fas fa-code lang-icon"></i> C++</li>
+                <li><i class="fas fa-microchip lang-icon"></i> C (Arduino & Firmware)</li>
+                <li><i class="fab fa-html5 lang-icon"></i> HTML</li>
+                <li><i class="fab fa-js lang-icon"></i> JavaScript</li>
+            </ul>
+        </div>
     </div>
 
     <footer class="footer">

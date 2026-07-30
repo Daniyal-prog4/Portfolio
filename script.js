@@ -1,11 +1,47 @@
 // Initialize AOS Animation
 AOS.init({ duration: 1000, once: true });
 
+// Dynamic Typing Effect after "System Engineer &"
+const typingWords = ["Cybersecurity Enthusiast", "Embedded Systems Dev", "Threat Analyst"];
+let wordIdx = 0;
+let charIdx = 0;
+let isDeleting = false;
+const typingTarget = document.getElementById("typing-text");
+
+function typeEffect() {
+    if (!typingTarget) return;
+    const currentWord = typingWords[wordIdx];
+    
+    if (isDeleting) {
+        typingTarget.textContent = currentWord.substring(0, charIdx - 1);
+        charIdx--;
+    } else {
+        typingTarget.textContent = currentWord.substring(0, charIdx + 1);
+        charIdx++;
+    }
+
+    let typeSpeed = isDeleting ? 50 : 100;
+
+    if (!isDeleting && charIdx === currentWord.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+    } else if (isDeleting && charIdx === 0) {
+        isDeleting = false;
+        wordIdx = (wordIdx + 1) % typingWords.length;
+        typeSpeed = 500;
+    }
+
+    setTimeout(typeEffect, typeSpeed);
+}
+document.addEventListener("DOMContentLoaded", typeEffect);
+
 // Mouse Glow Follower
 const cursorGlow = document.querySelector('.cursor-glow');
 document.addEventListener('mousemove', (e) => {
-    cursorGlow.style.left = e.clientX + 'px';
-    cursorGlow.style.top = e.clientY + 'px';
+    if (cursorGlow) {
+        cursorGlow.style.left = e.clientX + 'px';
+        cursorGlow.style.top = e.clientY + 'px';
+    }
 });
 
 // Mobile Navigation Toggle
@@ -19,37 +55,87 @@ if (menuIcon) {
     };
 }
 
-// Binary Matrix Particle Background
+// Interactive Cyber Grid / Network Background Animation
 const canvas = document.getElementById('cyber-bg');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-const chars = '0110010101010101';
-const fontSize = 14;
-const columns = canvas.width / fontSize;
-const drops = Array(Math.floor(columns)).fill(1);
+let particlesArray = [];
+const numberOfParticles = 80;
 
-function drawMatrix() {
-    ctx.fillStyle = 'rgba(7, 10, 19, 0.08)';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = '#00f2fe';
-    ctx.font = fontSize + 'px monospace';
+let mouse = { x: null, y: null, radius: 150 };
 
-    for (let i = 0; i < drops.length; i++) {
-        const text = chars.charAt(Math.floor(Math.random() * chars.length));
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-        }
-        drops[i]++;
+window.addEventListener('mousemove', (e) => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+});
+
+class Particle {
+    constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 1.5 - 0.75;
+        this.speedY = Math.random() * 1.5 - 0.75;
+    }
+    update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas.width || this.x < 0) this.speedX = -this.speedX;
+        if (this.y > canvas.height || this.y < 0) this.speedY = -this.speedY;
+    }
+    draw() {
+        ctx.fillStyle = '#00f2fe';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
     }
 }
-setInterval(drawMatrix, 50);
+
+function initParticles() {
+    particlesArray = [];
+    for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+    }
+}
+initParticles();
+
+function connectParticles() {
+    for (let a = 0; a < particlesArray.length; a++) {
+        for (let b = a; b < particlesArray.length; b++) {
+            let dx = particlesArray[a].x - particlesArray[b].x;
+            let dy = particlesArray[a].y - particlesArray[b].y;
+            let distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < 120) {
+                ctx.strokeStyle = `rgba(0, 242, 254, ${1 - distance / 120})`;
+                ctx.lineWidth = 0.6;
+                ctx.beginPath();
+                ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+function animateParticles() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+    }
+    connectParticles();
+    requestAnimationFrame(animateParticles);
+}
+animateParticles();
 
 window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+    initParticles();
 });
 
 // Image Modal Functions
@@ -64,33 +150,68 @@ function closeModal() {
     document.getElementById('imageModal').style.display = 'none';
 }
 
-// Number Counter Animation
+// Programming Languages Modal Functions
+function openLanguagesModal() {
+    document.getElementById('languagesModal').style.display = 'flex';
+}
+
+function closeLanguagesModal() {
+    document.getElementById('languagesModal').style.display = 'none';
+}
+
+// Stats Counter Animation (Count-Up to exact values like 3.42 CGPA)
 const counters = document.querySelectorAll('.counter');
 let started = false;
 
+function startCounters() {
+    counters.forEach(counter => {
+        const target = +counter.getAttribute('data-target');
+        const decimals = +counter.getAttribute('data-decimals') || 0;
+        let count = 0;
+        const speed = target / 60;
+
+        const updateCount = () => {
+            count += speed;
+            if (count < target) {
+                counter.innerText = count.toFixed(decimals);
+                setTimeout(updateCount, 30);
+            } else {
+                counter.innerText = target.toFixed(decimals);
+            }
+        };
+        updateCount();
+    });
+}
+
+// Skills Progress Bars Fill Animation
+const progressBars = document.querySelectorAll('.progress');
+let skillsAnimated = false;
+
+function animateSkills() {
+    progressBars.forEach(bar => {
+        const targetWidth = bar.getAttribute('data-progress');
+        bar.style.width = targetWidth;
+    });
+}
+
+// Scroll Trigger for Counter & Skills
 window.addEventListener('scroll', () => {
     const statsSection = document.getElementById('stats');
-    if (!statsSection) return;
-    const pos = statsSection.getBoundingClientRect().top;
+    if (statsSection && !started) {
+        const pos = statsSection.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+            startCounters();
+            started = true;
+        }
+    }
 
-    if (pos < window.innerHeight && !started) {
-        counters.forEach(counter => {
-            const target = +counter.getAttribute('data-target');
-            let count = 0;
-            const speed = target / 50;
-
-            const updateCount = () => {
-                count += speed;
-                if (count < target) {
-                    counter.innerText = count.toFixed(target % 1 !== 0 ? 2 : 0);
-                    setTimeout(updateCount, 30);
-                } else {
-                    counter.innerText = target;
-                }
-            };
-            updateCount();
-        });
-        started = true;
+    const skillsSection = document.getElementById('skills');
+    if (skillsSection && !skillsAnimated) {
+        const pos = skillsSection.getBoundingClientRect().top;
+        if (pos < window.innerHeight - 100) {
+            animateSkills();
+            skillsAnimated = true;
+        }
     }
 });
 
