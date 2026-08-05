@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daniyal Saleem | System Engineer & Cybersecurity</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+<body>
+
+    <div class="cursor-glow"></div>
+
+    <canvas id="cyber-bg"></canvas>
+
+    <header class="header">
+        <a href="#" class="logo">Daniyal<span>.sec</span></a>
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#stats">Overview</a>
+            <a href="#skills">Skills</a>
+            <a href="#certs">Certifications</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div id="menu-icon" class="fas fa-bars"></div>
+    </header>
+
+    <section class="home" id="home">
+        <div class="home-content" data-aos="fade-right">
+            <div class="status-badge">
+                <span class="pulse-dot"></span> Available for Internship
+            </div>
+            <h3>Hello, I'm</h3>
+            <h1 class="hero-name">Daniyal Saleem</h1>
+            <h3 class="role-text">System Engineer & <span id="typing-text"></span></h3>
+            <p>Computer Systems Engineering student at Sukkur IBA University (OGDCL NTHP Scholar). Passionate about threat mitigation, embedded systems security, Linux log analysis, and network defense.</p>
+            
+            <div class="social-media">
+                <a href="https://www.linkedin.com/in/daniyal-saleem-a00669355/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Daniyal-prog4" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://profile.indeed.com/?hl=en_PK&co=PK&from=gnav-homepage" target="_blank" title="Indeed"><i class="fas fa-briefcase"></i></a>
+                <a href="https://www.facebook.com/share/1VFwi2LdUi/" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="mailto:daniyalsaleem.becsef25@iba-suk.edu.pk" title="Email"><i class="fas fa-envelope"></i></a>
+            </div>
+
+            <div class="cta-buttons">
+                <a href="CV.pdf" download class="btn btn-glow"><i class="fas fa-download"></i> Download CV</a>
+                <a href="#projects" class="btn btn-outline">View Portfolio</a>
+            </div>
+        </div>
+
+        <div class="home-img" data-aos="fade-left">
+            <div class="dots-avatar-wrapper">
+                <div class="dots-ring"></div>
+                <img src="personal1.png" alt="Daniyal Saleem" class="profile-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="about-img" data-aos="zoom-in">
+            <div class="glass-card nthp-card">
+                <i class="fas fa-award nthp-icon"></i>
+                <h4>OGDCL NTHP Scholar</h4>
+                <p>Ranked 92nd out of 7,000+ applicants nationwide</p>
+            </div>
+        </div>
+        <div class="about-content" data-aos="fade-up">
+            <h2 class="heading">About <span>Me</span></h2>
+            <h3>Computer Systems Engineering | Sukkur IBA University</h3>
+            <p>Secured the prestigious <strong>OGDCL National Talent Hunt Program (NTHP) Scholarship</strong> at Sukkur IBA University. Currently maintaining a <strong>3.42 CGPA</strong>, bridging hardware security with high-level cybersecurity infrastructure.</p>
+            
+            <div class="about-details">
+                <p><i class="fas fa-graduation-cap"></i> <strong>Degree:</strong> B.E. Computer Systems Engineering (2025–Present)</p>
+                <p><i class="fas fa-map-marker-alt"></i> <strong>Location:</strong> Lakki Marwat, KPK, Pakistan</p>
+                <p><i class="fas fa-envelope"></i> <strong>Email:</strong> daniyalsaleem.becsef25@iba-suk.edu.pk</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" id="stats">
+        <div class="stats-container">
+            <div class="stat-card glass-card" data-aos="flip-up">
+                <h2 class="counter" data-target="3.42" data-decimals="2">0.00</h2>
+                <p>CGPA</p>
+            </div>
+            
+            <a href="#projects" class="stat-card glass-card clickable-card" data-aos="flip-up" data-aos-delay="100">
+                <h2 class="counter" data-target="2">0</h2>
+                <p>Projects <i class="fas fa-external-link-alt click-icon"></i></p>
+            </a>
+
+            <a href="#certs" class="stat-card glass-card clickable-card" data-aos="flip-up" data-aos-delay="200">
+                <h2 class="counter" data-target="6">0</h2>
+                <p>Certifications <i class="fas fa-external-link-alt click-icon"></i></p>
+            </a>
+
+            <div class="stat-card glass-card clickable-card" onclick="openLanguagesModal()" data-aos="flip-up" data-aos-delay="300">
+                <h2 class="counter" data-target="5">0</h2>
+                <p>Prog. Languages <i class="fas fa-info-circle click-icon"></i></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <h2 class="heading" data-aos="fade-up">Technical <span>Skills</span></h2>
+        <div class="skills-wrapper" data-aos="fade-up">
+            <div class="skill-bar">
+                <div class="info"><span>Cybersecurity & Threat Mitigation</span><span class="percent">90%</span></div>
+                <div class="bar"><span class="progress" data-progress="90%"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="info"><span>C / C++ Programming</span><span class="percent">85%</span></div>
+                <div class="bar"><span class="progress" data-progress="85%"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="info"><span>Arduino & Embedded IoT</span><span class="percent">90%</span></div>
+                <div class="bar"><span class="progress" data-progress="90%"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="info"><span>Linux Administration & CLI</span><span class="percent">80%</span></div>
+                <div class="bar"><span class="progress" data-progress="80%"></span></div>
+            </div>
+            <div class="skill-bar">
+                <div class="info"><span>Java</span><span class="percent">75%</span></div>
+                <div class="bar"><span class="progress" data-progress="75%"></span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certs" id="certs">
+        <h2 class="heading" data-aos="fade-up">Honors & <span>Certifications</span></h2>
+        <div class="certs-container">
+            
+            <div class="cert-card glass-card" data-aos="zoom-in">
+                <div class="cert-img-box">
+                    <img src="Coursera.jpg" alt="Google Cybersecurity Certificate" class="cert-img">
+                </div>
+                <h3>Google Foundations of Cybersecurity</h3>
+                <p>Issued via Coursera. Security Frameworks, SIEM tools, Linux & SQL.</p>
+                <div class="cert-actions">
+                    <button class="btn-sm" onclick="openModal('Coursera.jpg')">View</button>
+                    <a href="Coursera.jpg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <a href="https://coursera.org/verify/03ADU47IDL16" target="_blank" class="btn-sm btn-outline"><i class="fas fa-link"></i></a>
+                </div>
+            </div>
+
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="100">
+                <div class="cert-img-box">
+                    <img src="CISCO.png" alt="Cisco Certificate" class="cert-img">
+                </div>
+                <h3>Cisco Introduction to Cybersecurity</h3>
+                <p>Issued by Cisco Networking Academy. Network vulnerabilities & defense.</p>
+                <div class="cert-actions">
+                    <button class="btn-sm" onclick="openModal('CISCO.png')">View</button>
+                    <a href="CISCO.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                    <button class="btn-sm btn-outline" onclick="openModal('Badge.png')">Badge Proof</button>
+                </div>
+            </div>
+
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="200">
+                <div class="cert-img-box">
+                    <img src="AI.png" alt="YNN AI Basics" class="cert-img">
+                </div>
+                <h3>YNN: AI & Automation Basics</h3>
+                <p>Certified Leadership & Technical Webinar by Youth National Network.</p>
+                <div class="cert-actions">
+                    <button class="btn-sm" onclick="openModal('AI.png')">View</button>
+                    <a href="AI.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+
+           <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="300">
+               <div class="cert-img-box">
+                   <img src="Finalproject.jpeg" alt="ROBOCOMPX Workshop Certificate" class="cert-img">
+               </div>
+               <h3>ROBOCOMPX: Robotics & Embedded Systems</h3>
+               <p>Certificate of Participation organized by CSE Society, Sukkur IBA University.</p>
+               <div class="cert-actions">
+                   <button class="btn-sm" onclick="openModal('Finalproject.jpeg')">View</button>
+                   <a href="Finalproject.jpeg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+               </div>
+           </div>
+
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="400">
+                <div class="cert-img-box">
+                    <img src="Microsoft.jpeg" alt="AI Tour Sindh 2025 Certificate" class="cert-img">
+                </div>
+                <h3>AI TOUR - SINDH 2025</h3>
+                <p>Certificate of Participation by Pakistan User Group, Microsoft & Copilot.</p>
+                <div class="cert-actions">
+                    <button class="btn-sm" onclick="openModal('Microsoft.jpeg')">View</button>
+                    <a href="Microsoft.jpeg" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+
+            <div class="cert-card glass-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="cert-img-box">
+                    <img src="03.png" alt="YNN Sustainability Certificate" class="cert-img">
+                </div>
+                <h3>YNN: Sustainability Participation</h3>
+                <p>Official Credential of Participation - Youth National Network.</p>
+                <div class="cert-actions">
+                    <button class="btn-sm" onclick="openModal('03.png')">View</button>
+                    <a href="03.png" download class="btn-sm btn-outline"><i class="fas fa-download"></i></a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h2 class="heading" data-aos="fade-up">Featured <span>Projects</span></h2>
+        <div class="projects-container">
+            
+            <div class="project-card glass-card" data-aos="fade-up">
+                <h3>Laser Data Transmission System</h3>
+                <p>Hardware laser transmission system programmed on Arduino (C) for signal encoding/decoding.</p>
+                <div class="tech-tags"><span>Arduino</span><span>C Language</span><span>Hardware</span></div>
+                <div class="project-links">
+                    <a href="https://github.com/Daniyal-prog4/Arduino-Laser-Morse-Communication" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+            <div class="project-card glass-card" data-aos="fade-up" data-aos-delay="100">
+                <h3>Personality Trait Analyzer</h3>
+                <p>Software application evaluating psychological traits based on algorithmic logic in C++.</p>
+                <div class="tech-tags"><span>C++</span><span>Algorithms</span></div>
+                <div class="project-links">
+                    <a href="https://github.com/Daniyal-prog4/Personality-Trait-Analyzer" target="_blank" class="btn-sm"><i class="fab fa-github"></i> GitHub</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <h2 class="heading" data-aos="fade-up">Get In <span>Touch</span></h2>
+        <form id="contact-form" class="glass-card" data-aos="zoom-in">
+            <div class="input-box">
+                <input type="text" id="user_name" placeholder="Full Name" required>
+                <input type="email" id="user_email" placeholder="Email Address" required>
+            </div>
+            <div class="input-box">
+                <input type="text" id="user_phone" placeholder="Mobile Number">
+                <input type="text" id="subject" placeholder="Email Subject">
+            </div>
+            <textarea id="message" cols="30" rows="6" placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn btn-glow">
+                <span id="btn-text">Send Message</span>
+                <div id="btn-spinner" class="spinner hidden"></div>
+            </button>
+            <p id="form-status" class="form-status-msg"></p>
+        </form>
+    </section>
+
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="imgModalTarget">
+    </div>
+
+    <div id="languagesModal" class="modal">
+        <div class="modal-card glass-card">
+            <span class="close-modal" onclick="closeLanguagesModal()">&times;</span>
+            <h3 class="modal-heading"><i class="fas fa-code"></i> Programming Languages</h3>
+            <ul class="lang-list">
+                <li><i class="fab fa-java lang-icon"></i> Java</li>
+                <li><i class="fas fa-code lang-icon"></i> C++</li>
+                <li><i class="fas fa-microchip lang-icon"></i> C (Arduino & Firmware)</li>
+                <li><i class="fab fa-html5 lang-icon"></i> HTML</li>
+                <li><i class="fab fa-js lang-icon"></i> JavaScript</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>Copyright &copy; 2026 by Daniyal Saleem | All Rights Reserved.</p>
+        <div class="footer-iconTop"><a href="#home"><i class="fas fa-arrow-up"></i></a></div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
