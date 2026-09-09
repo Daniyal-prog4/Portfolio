@@ -2,7 +2,7 @@
 AOS.init({ duration: 1000, once: true });
 
 // Dynamic Typing Effect after "System Engineer &"
-const typingWords = ["Cybersecurity Enthusiast", "Embedded Systems Dev", "Threat Analyst"];
+const typingWords = ["System Engineer", "Cybersecurity Enthusiast", "Embedded Systems Dev", "Threat Analyst"];
 let wordIdx = 0;
 let charIdx = 0;
 let isDeleting = false;
